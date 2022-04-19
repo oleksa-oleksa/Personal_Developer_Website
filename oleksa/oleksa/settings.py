@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
+from decouple import config
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -20,7 +21,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'm_b2(cpl#8-v*=mdxv&1yqw2lafsd9mp$fnqdhgt!mq&7^jn&p'
+SECRET_KEY = config("SECRET_KEY") # replaces the secret key
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
